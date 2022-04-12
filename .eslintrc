@@ -18,6 +18,8 @@
   "plugins": ["react", "prettier"],
   "rules": {
     "prettier/prettier": "warn",
-    "react/jsx-filename-extension": "off"
+    "react/jsx-filename-extension": "off",
+    "import/no-extraneous-dependencies": "off",
+    "react/function-component-definition": "off"
   }
 }
