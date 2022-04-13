@@ -1,1 +1,1 @@
-export { default as JsonPlaceholderService } from './JsonPlaceholder';
+export { default as JsonPlaceholderService } from './json-placerholder';

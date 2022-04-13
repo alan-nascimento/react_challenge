@@ -10,11 +10,12 @@ import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import MenuIcon from '@material-ui/icons/Menu';
-import useStyles from './styles';
-import UsersPaper from './components/UsersPaper/UsersPaper';
-import TODOPaper from './components/TODOPaper/TODOPaper';
 
-export default function DashBoardPage() {
+import useStyles from './dashboard.styles';
+import UsersPaper from './components/users-paper/users-paper';
+import TODOPaper from './components/todo-paper/todo-paper';
+
+const DashboardPage = () => {
   const classes = useStyles();
 
   const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
@@ -72,4 +73,6 @@ export default function DashBoardPage() {
       </main>
     </div>
   );
-}
+};
+
+export default DashboardPage;
