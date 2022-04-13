@@ -10,9 +10,9 @@ import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import MenuIcon from '@material-ui/icons/Menu';
-import useStyles from './styleHomePage';
-import UsersPaper from './components/UsersPaper';
-import TODOPaper from './components/TODOPaper';
+import useStyles from './styles';
+import UsersPaper from './components/UsersPaper/UsersPaper';
+import TODOPaper from './components/TODOPaper/TODOPaper';
 
 export default function DashBoardPage() {
   const classes = useStyles();

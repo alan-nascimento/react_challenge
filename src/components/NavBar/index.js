@@ -16,7 +16,7 @@ const NavBar = () => {
           <ListItemIcon>
             <PeopleIcon />
           </ListItemIcon>
-          <ListItemText primary="Usuarios" />
+          <ListItemText primary="Users" />
         </ListItem>
         <ListItem button>
           <ListItemIcon>

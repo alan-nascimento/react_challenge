@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
-import DashBoardPage from '../pages/dashboard/DashBoardPage';
+import DashBoardPage from '../pages/Dashboard';
 
 const Router = () => {
   return (
