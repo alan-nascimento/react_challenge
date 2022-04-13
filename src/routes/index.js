@@ -1,13 +1,15 @@
 import React from 'react';
 import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
-import DashBoardPage from '../pages/Dashboard';
+
+import { DashboardPage } from 'src/pages';
 
 const Router = () => {
   return (
     <BrowserRouter>
       <Switch>
-        <Route exact path="/" component={DashBoardPage} />
-        <Route render={() => <Redirect to="/" />} />
+        <Route exact path="/users" component={DashboardPage} />
+        <Route exact path="/todos" component={DashboardPage} />
+        <Route render={() => <Redirect to="/users" />} />
       </Switch>
     </BrowserRouter>
   );

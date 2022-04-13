@@ -1,13 +1,14 @@
 import React from 'react';
 import { QueryClient, QueryClientProvider } from 'react-query';
-import { DashboardPage } from './pages';
+
+import Router from 'src/routes';
 
 const queryClient = new QueryClient();
 
 const App = () => {
   return (
     <QueryClientProvider client={queryClient}>
-      <DashboardPage />
+      <Router />
     </QueryClientProvider>
   );
 };
