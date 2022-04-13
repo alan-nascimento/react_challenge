@@ -13,12 +13,11 @@ const TODOPaper = () => {
 
   return (
     <DataGrid
-      rows={isSuccess ? data : []}
-      loading={isLoading}
-      columns={columns.todo}
-      pageSize={10}
       checkboxSelection
-      onSelectionChange={() => {}}
+      columns={columns.todo}
+      loading={isLoading}
+      pageSize={10}
+      rows={isSuccess ? data : []}
     />
   );
 };

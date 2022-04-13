@@ -10,15 +10,21 @@ import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import MenuIcon from '@material-ui/icons/Menu';
+import { useRouteMatch } from 'react-router-dom';
 
-import useStyles from './dashboard.styles';
-import UsersPaper from './components/users-paper/users-paper';
+import { NavBar } from 'src/components';
+import { routes } from 'src/routes';
+
 import TODOPaper from './components/todo-paper/todo-paper';
+import UsersPaper from './components/users-paper/users-paper';
+import useStyles from './dashboard.styles';
 
 const DashboardPage = () => {
   const classes = useStyles();
 
   const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
+
+  const route = useRouteMatch();
 
   return (
     <div className={classes.root}>
@@ -51,21 +57,16 @@ const DashboardPage = () => {
         }}
       >
         <div className={classes.toolbarIcon} />
+        <NavBar />
       </Drawer>
       <main className={classes.content}>
         <div className={classes.appBarSpacer} />
         <Container maxWidth="lg" className={classes.container}>
           <Grid container spacing={3}>
-            {/* Users */}
             <Grid item xs={12} md={12} lg={12}>
               <Paper className={fixedHeightPaper}>
-                <UsersPaper />
-              </Paper>
-            </Grid>
-            {/* ToDoPage */}
-            <Grid item xs={12} md={12} lg={12}>
-              <Paper className={fixedHeightPaper}>
-                <TODOPaper />
+                {route.path === routes.USERS && <UsersPaper />}
+                {route.path === routes.TODOS && <TODOPaper />}
               </Paper>
             </Grid>
           </Grid>

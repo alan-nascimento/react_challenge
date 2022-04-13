@@ -16,7 +16,6 @@ const UsersPaper = () => {
       checkboxSelection
       columns={columns.user}
       loading={isLoading}
-      onSelectionChange={() => {}}
       pageSize={10}
       rows={isSuccess ? data : []}
     />

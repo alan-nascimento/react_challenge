@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { QueryClient, QueryClientProvider } from 'react-query';
 
-import Router from './routes';
+import { Router } from './routes';
 
 const queryClient = new QueryClient();
 
