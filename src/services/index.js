@@ -8,7 +8,13 @@ const api = axios.create({
 
 const getUsers = async () => {
   const { data } = await api.get('/users');
-  return data;
+
+  return data.map((item) => ({
+    id: item.id,
+    username: item.username,
+    catchPhrase: item.company.catchPhrase,
+    website: item.website,
+  }));
 };
 
 const getTodos = async (userId) => {

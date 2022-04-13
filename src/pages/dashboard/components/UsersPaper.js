@@ -1,23 +1,21 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useQuery } from 'react-query';
 import { DataGrid } from '@material-ui/data-grid';
 
-const columns = [
-  { field: 'id', headerName: 'ID', width: 70 },
-  { field: 'UserName', headerName: 'Username', width: 130 },
-  { field: 'website', headerName: 'Website', width: 130 },
-  // catchphrase
-];
+import X from 'src/services';
+import { columns } from 'src/utils';
 
 const UsersPaper = () => {
-  const [users] = useState([]);
+  const { data, isLoading, isSuccess } = useQuery('users', X.getUsers);
 
   return (
     <DataGrid
-      rows={users}
-      columns={columns}
-      pageSize={10}
       checkboxSelection
+      columns={columns.user}
+      loading={isLoading}
       onSelectionChange={() => {}}
+      pageSize={10}
+      rows={isSuccess ? data : []}
     />
   );
 };
