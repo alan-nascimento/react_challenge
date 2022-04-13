@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { env } from 'src/config';
-import transformUsers from './transforms/users';
+import transformTodos from './transforms/response/todos';
+import transformUsers from './transforms/response/users';
 
 const api = axios.create({
   baseURL: env.JSON_PLACEHOLDER_BASE_URL,
@@ -16,7 +17,10 @@ const getUsers = async () => {
 };
 
 const getTodos = async () => {
-  const { data } = await api.get('/todos');
+  const { data } = await api.get('/todos', {
+    transformResponse: [...axios.defaults.transformResponse, transformTodos],
+  });
+
   return data;
 };
 
