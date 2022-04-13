@@ -1,12 +1,15 @@
 import React from 'react';
 import { DataGrid } from '@material-ui/data-grid';
-import { columns } from 'src/utils';
 import { useQuery } from 'react-query';
 
-import X from 'src/services';
+import { JsonPlaceholderService } from 'src/services';
+import { columns } from 'src/utils';
 
 const TODOPaper = () => {
-  const { data, isLoading, isSuccess } = useQuery('todos', X.getTodos);
+  const { data, isLoading, isSuccess } = useQuery(
+    'todos',
+    JsonPlaceholderService.getTodos
+  );
 
   return (
     <DataGrid
