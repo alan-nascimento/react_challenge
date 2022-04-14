@@ -1,6 +1,6 @@
 {
   "*.{js,jsx}": [
     "eslint 'src/**' --fix",
-    "npm run test"
+    "npm run test:coverage"
   ]
 }
