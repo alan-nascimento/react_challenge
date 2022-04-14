@@ -14,11 +14,12 @@ const NavBar = () => {
   const history = useHistory();
 
   return (
-    <div>
+    <div data-testid="navbar">
       <Divider />
       <List>
         <ListItem
           button
+          data-testid="navbar-users"
           onClick={() => history.push(routes.USERS)}
           selected={route.path === routes.USERS}
         >
@@ -29,6 +30,7 @@ const NavBar = () => {
         </ListItem>
         <ListItem
           button
+          data-testid="navbar-todos"
           onClick={() => history.push(routes.TODOS)}
           selected={route.path === routes.TODOS}
         >
